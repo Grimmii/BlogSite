@@ -26,10 +26,3 @@ python run.py
 ```
 
 Then open http://127.0.0.1:5000 using Microsoft Edge browser.
-
-## Authors
-
-* **Prakrit Wongphayabal**
-* **Jason Antonino**
-* **Thomas Martin**
-
