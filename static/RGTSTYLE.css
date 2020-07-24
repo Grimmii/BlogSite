@@ -1,0 +1,17 @@
+#signUpBox{
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 350px;
+    border-style: solid;
+    border-color: #4d94ff;
+    width: 500px;
+    text-align: center;
+}
+
+.signUpButton{
+    margin: 5px;
+}

@@ -1,0 +1,2 @@
+LOGINTOKEN = 'loginToken'
+SESSION= 'session'

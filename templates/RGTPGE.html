@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='GNLSTYLE.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='RGTSTYLE.css') }}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha1.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='RGTPGE.js') }}"></script>
+    </head>
+
+    <body>
+        <h1>{{errMsg}}</h1>
+        <div id = "signUpBox">
+            <form action="/signup/signup" method="POST" id="infoForm">
+                <div class = "signUpFields">
+                    <p>Full Name</p>
+                    <input type="text" name="fullname" pattern="^[a-zA-Z0-9_ ]*$" required pattern="\S+.*" />
+                </div>
+
+                <div class = "signUpFields">
+                    <p>Username</p>
+                    <input type="text" name="username" pattern="^[a-zA-Z0-9]+$" required pattern="\S+.*" />
+                </div>
+
+                <div class = "signUpFields">
+                    <p>Password</p>
+                    <input type="password"  name="password" id="PW" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required pattern="\S+.*" />
+                </div>
+
+                <div class = "signUpFields">
+                    <p>Confirm Password</p>
+                    <input type="password"  name="confirmPassword" id="confPW" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required pattern="\S+.*" />
+                </div>
+
+                <input type ="hidden" name="CSRFToken" value="{{CSRF}}">
+
+                <button class = "signUpButton" type="submit" name="createAccount">Create Account</button>
+            </form>
+            <a href = "/"><button class = "signUpButton">Back to Login</button></a>
+        </div>
+    </body>
+</html>

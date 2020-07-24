@@ -1,0 +1,43 @@
+{% extends "BASE.html" %}
+{% block title %}Profile Page{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block script %}
+<link rel="stylesheet" href="{{ url_for('static', filename='PRFLSTYLE.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='GNLSTYLE.css') }}">
+{% endblock %}
+
+{% block bodyblock %}
+<div id = "profileBody">
+   <div class="profileHeader">
+      <div class="profileHeaderInfo">
+         <img src={{profilepic}} alt={{fname}} class="post-icon">
+         <p>{{fname}}</p>
+         <p>THIS IS THE PROFILE INFORMATION</p>
+      </div>
+   </div>
+   <div id = "profilePosts">
+      <div class="postbox">
+         <div class="imgcontainer"><img src={{profilepic}} /></div>
+         <form action="/profile/PostContent" method="POST">
+            <textarea placeholder="What's on your mind" name="userpostcontent" required pattern="\S+.*"></textarea>
+            <input type ="hidden" name="CSRFToken" value="{{CSRF}}">
+            <input id="postBtn" type="submit" value="post"/>
+         </form>
+      </div>
+      {% for data in posts %}
+         <div class="post-container">
+            <div class="imgcontainer"><img src={{data.imgurl}} alt={{data.name}} class="post-icon"></div>
+            <div class="post-content">
+               <b>{{data.name}}</b>
+               <p>{{data.content|safe}}</p>
+               <span class="post-time">{{data.datetime}}</span>
+            </div>
+         </div>
+      {% endfor %}
+   </div>
+</div>
+{% endblock %}

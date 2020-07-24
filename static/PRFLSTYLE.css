@@ -1,0 +1,25 @@
+.profileHeader{
+   margin: 25px auto;
+   height: auto;
+   width: 80%;
+   background-color: #FFFFFF;
+   padding-top: 20px;
+   padding-bottom: 20px;
+}
+
+.profileHeaderInfo{
+   margin: 30px auto;
+   margin-bottom: 30px;
+   height: auto;
+   width: 50%;
+}
+.profileHeaderInfo img{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.profileHeaderInfo p {
+   padding-left : 10px;
+   margin: 5px;
+}

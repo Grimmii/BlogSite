@@ -1,0 +1,17 @@
+#loginBox{
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 250px;
+    border-style: solid;
+    border-color: #4d94ff;
+    width: 500px;
+    text-align: center;
+}
+
+.loginButtons{
+    margin: 5px;
+}

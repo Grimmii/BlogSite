@@ -1,0 +1,29 @@
+{% extends "BASE.html" %}
+{% block title %}Home page{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block script %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='SRHSTYLE.css') }}">
+{% endblock %}
+
+{% block bodyblock %}
+  <div class="searchbox">
+    <form action="/usersearch/search" method="POST">
+      <textarea placeholder="Enter search terms" name="searchTerm"></textarea>
+      <input id="searchBtn" type="submit" value="Search"/>
+      <input type ="hidden" name="CSRFToken" value="{{CSRF}}">
+    </form>
+  </div>
+
+  {% for user in usercard %}
+    <div class="post-container">
+      <div class="imgcontainer"><img src={{user.imgurl}} alt={{user.name}} class="post-icon"></div>
+      <div class="post-content">
+        <h2>{{user.name}}</h2>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}

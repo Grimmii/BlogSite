@@ -1,0 +1,32 @@
+{% extends "BASE.html" %}
+{% block title %}Home page{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
+
+{% block bodyblock %}
+<div class="postbox">
+  <div class="imgcontainer"><img src={{imgurl}} /></div>
+  <form action="/home/PostContent" method="POST">
+      <textarea placeholder="What's on your mind" name="userpostcontent" required pattern="\S+.*"></textarea>
+      <input type ="hidden" name="CSRFToken" value="{{CSRF}}">
+      <input id="postBtn" type="submit" value="post"/>
+  </form>
+</div>
+
+{% for data in posts %}
+  <div class="post-container">
+    <div class="imgcontainer"><img src={{data.imgurl}} alt={{data.name}} class="post-icon"></div>
+    <div class="post-content">
+      <b>{{data.name}}</b>
+      <p>{{data.content|safe}}</p>
+      <span class="post-time">{{data.datetime}}</span>
+    </div>
+  </div>
+ {% endfor %}
+{% endblock %}

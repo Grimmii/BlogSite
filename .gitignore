@@ -1,0 +1,7 @@
+scripts/DB/__pycache__/
+scripts/DB/Tables/__pycache__/
+scripts/DB/dbmain
+dbmain
+scripts/__pycache__/
+scripts/DB/Tables/Content/USRADM.csv
+scripts/DB/Tables/Content/USRPST.csv
